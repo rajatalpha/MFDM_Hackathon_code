@@ -1,0 +1,17 @@
+from collections import defaultdict
+t = int(input())
+while (t!=0):
+    n = int(input())
+    f = [int(x.split()) for x in input()]
+    f.sort()
+    a = []
+    table = defaultdict(lambda:0)
+    for i in range(n):
+        table[f[i]] +=1
+    for i in range(n): 
+        if table[f[i]]!=1:
+            a.append(f[i])
+    if (len(a)==0):
+        print(-1)
+    else:
+        print(int(len(a)/2))
