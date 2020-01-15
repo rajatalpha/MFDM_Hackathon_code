@@ -1,8 +1,9 @@
 from collections import defaultdict
+from collections import Counter
 t = int(input())
-while (t!=0):
+while(t>0):
     n = int(input())
-    f = [int(x.split()) for x in input()]
+    f = list(map(int,input().split()))
     f.sort()
     a = []
     table = defaultdict(lambda:0)
@@ -11,7 +12,8 @@ while (t!=0):
     for i in range(n): 
         if table[f[i]]!=1:
             a.append(f[i])
-    if (len(a)==0):
+    if (len(a)==0 or n==1):
         print(-1)
     else:
-        print(int(len(a)/2))
+        print(len(Counter(a).keys()))
+    t-=1
