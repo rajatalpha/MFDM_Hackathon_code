@@ -17,3 +17,25 @@ while(t>0):
     else:
         print(len(Counter(a).keys()))
     t-=1
+#################################################################################################
+In order to print the elements on below the other 
+from collections import defaultdict
+from collections import Counter
+t = int(input())
+while(t>0):
+    n = int(input())
+    f = list(map(int,input().split()))
+    f.sort()
+    a = []
+    table = defaultdict(lambda:0)
+    for i in range(n):
+        table[f[i]] +=1
+    for i in range(n): 
+        if table[f[i]]!=1:
+            a.append(f[i])
+    if (len(a)==0 or n==1):
+        print(-1)
+    else:
+        for i in Counter(a).keys():
+            print(i)
+    t-=1
